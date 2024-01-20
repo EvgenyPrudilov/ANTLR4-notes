@@ -81,7 +81,11 @@ $ grun ArrayInit init -tokens
 [@7,13:12='',<-1>,2:0]
 ```
 
-Каждая строка представляет токен и всё, что бы о нём знаем: [@5,8:10='451',<4>,1:8], где @5 - индекс токена(начиная в 0) 8:10='451' - позиции символов от и до(начиная с 0) и сам токен <4> - тип токена 1:8 - строка 1(начиная с 1) и начальная позиция 8
+Каждая строка представляет токен и всё, что бы о нём знаем: [@5,8:10='451',<4>,1:8], где 
+* @5 - индекс токена(начиная в 0), 
+* 8:10='451' - позиции символов от и до(начиная с 0) и сам токен 
+* <4> - тип токена 
+* 1:8 - строка 1(начиная с 1) и начальная позиция 8
 
 Можно запускать grun и получить дерево: 
 
@@ -112,7 +116,8 @@ $ grun ArrayInit init -gui
 Мы можем интегрировать сгенерированный код в наше приложение. Попробуем сами написать TestRig -tree опцию. Код приложения(класс Test.java):
 
 ```
-import org.antlr.v4.runtime.; import org.antlr.v4.runtime.tree.;
+import org.antlr.v4.runtime.;
+import org.antlr.v4.runtime.tree.;
 
 public class Test { 
     public static void main(String[] args) throws Exception { 
@@ -138,7 +143,9 @@ $ java Test
 Получаем:
 
 ```
-(init { (value 1) , (value (init { (value 2) , (value 3) })) , (value 4) })
+(init { (value 1) ,
+        (value (init { (value 2) , (value 3) })) ,
+        (value 4) })
 ```
 
 Если мы где-то допустим синтаксическую ошибку, ANTLR4 парсер нам об этом с радостью сообщит.
@@ -172,7 +179,8 @@ public class ShortToUnicodeString extends ArrayInitBaseListener {
 Напишем код для транслятора(класс Translate.java):
 
 ```
-import org.antlr.v4.runtime.; import org.antlr.v4.runtime.tree.;
+import org.antlr.v4.runtime.;
+import org.antlr.v4.runtime.tree.;
 
 public class Translate { 
     public static void main(String[] args) throws Exception { 
