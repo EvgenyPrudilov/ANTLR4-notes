@@ -1,2 +1,2 @@
 # ANTLR4-notes
- Конспекты (Notes)
+ Мои конспекты по ANTLR4 (Notes)
